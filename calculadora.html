@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>DAW-Sergio Valenzuela</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="base">
+      <div class="calculadora">
+
+        <div id="resultado" class="casilla">
+        </div>
+
+        <div class="casilla centrado">
+          <div class="primernum"><h2>Primer numero:</h2><input class="inputNumero" type="text" name="var1"></div>
+          <div class="boleano1 oculto"><h2>Primer Valor:</h2><select class="select" type="text" name="bool1">
+            <option>true</option>
+            <option>false</option>
+          </select></div>
+          <div id="operador"></div>
+          <div class="segundonum"><h2>Segon numero:</h2><input class="inputNumero" type="text" name="var2"></div>
+          <div class="boleano2 oculto"><h2>Segon valor:</h2><select class="select" type="text" name="bool2">
+            <option>true</option>
+            <option>false</option>
+          </select></div>
+          <div><input type="submit" class="buttonResultado" value="=" onclick="calcular()"></div>
+        </div>
+
+        <div class="casilla">
+          <div class="operaciones">
+            <div class="casilla"><h2>Operacions:</h2></div>
+
+            <div class="aritmetiques oculto">
+              <h3>Aritmetiques</h3>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="+" onclick="showSuma()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="-" onclick="showResta()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="*" onclick="showMultiplicacion()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="/" onclick="showDivision()"></div>
+              </div>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="%" onclick="showResto()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="**" onclick="showExponenciacion()"></div>
+              </div>
+            </div>
+
+            <div class="unaries oculto">
+              <h3>Unaries</h3>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="++" onclick="showIncremento()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="--" onclick="showDecremento()"></div>
+              </div>
+            </div>
+
+            <div class="igualtatRelacional oculto">
+              <h3>Igualtat i relacional</h3>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="<" onclick="showMenorQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value=">" onclick="showMayorQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="==" onclick="showIgualQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="!=" onclick="showDistintoQue()"></div>
+              </div>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="<=" onclick="showMenorIgualQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="=>" onclick="showMayorIgualQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="===" onclick="showExactIgualQue()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="!==" onclick="showExactDistintoQue()"></div>
+              </div>
+            </div>
+
+            <div class="boleansCondicionals oculto">
+              <h3>Booleans-condicionals</h3>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="&&" onclick="showAnd()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="||" onclick="showOr()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="!" onclick="showXor()"></div>
+              </div>
+            </div>
+
+            <div class="nivellBit oculto">
+              <h3>A nivell Bit (Entrada en decimal)</h3>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value="&" onclick="showAndBit()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="|" onclick="showOrBit()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="~" onclick="showNotBit()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="^" onclick="showXorBit()"></div>
+              </div>
+              <div class="flexizquierda">
+                <div class="botonOperacion"><input type="submit" class="boton" value=">>" onclick="showDerechaBit()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value="<<" onclick="showIzquierdaBit()"></div>
+                <div class="botonOperacion"><input type="submit" class="boton" value=">>>" onclick="showDerechaSSBit()"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modo">
+            <div class="casilla"><h2>Modes:</h2></div>
+            <div class="casilla"><input type="submit" class="boton" value="Aritmetiques" onclick="showAritmetiques()"></div>
+            <div class="casilla"><input type="submit" class="boton" value="Unaries" onclick="showUnaries()"></div>
+            <div class="casilla"><input type="submit" class="boton" value="Igualtat i relacional"  onclick="showigualtatRelacional()"></div>
+            <div class="casilla"><input type="submit" class="boton" value="Boleans / condicionals"  onclick="showboleansCondicionals()"></div>
+            <div class="casilla"><input type="submit" class="boton" value="A nivell de bit"  onclick="shownivellBit()"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+	<script src="main.js"></script>
+
+	
+   </body>
+</html>
